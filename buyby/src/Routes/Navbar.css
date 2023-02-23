@@ -1,0 +1,113 @@
+.Menu-Items {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding: 25px 0px 25px 0px;
+}
+
+.Menu-Items::after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  width: 110%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.teal::after {
+  background-color: teal;
+}
+
+.teal:hover {
+  color: teal;
+}
+
+.teal-hover {
+  color: teal;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.yellow-hover {
+  color: rgb(255, 196, 0);
+  margin-bottom: 5px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.pink-hover {
+  color: rgb(255, 0, 157);
+  margin-bottom: 5px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.orange-hover {
+  color: rgb(255, 64, 0);
+  margin-bottom: 5px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.hover-item:hover {
+  font-size: 18px;
+  cursor: pointer;
+}
+.hover-item {
+  margin-bottom: 7px;
+  white-space: nowrap;
+}
+.orange::after {
+  background-color: rgb(255, 64, 0);
+}
+.orange:hover {
+  color: rgb(255, 64, 0);
+}
+.yellow::after {
+  background-color: rgb(255, 196, 0);
+}
+.yellow:hover {
+  color: rgb(255, 196, 0);
+}
+.pink::after {
+  color: rgb(255, 0, 157);
+  background-color: rgb(255, 0, 157);
+}
+.pink:hover {
+  color: rgb(255, 0, 157);
+}
+
+.Menu-Items:hover::after {
+  transform: scaleX(1.3);
+  transform-origin: bottom left;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 20px;
+  text-align: left;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 1;
+}
+
+.dropdown-content > * {
+  padding: 5px;
+}
