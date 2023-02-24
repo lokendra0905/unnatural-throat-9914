@@ -1,15 +1,28 @@
 import Carousel from "react-bootstrap/Carousel";
 import styles from "./Home.css";
+import axios from "axios";
 import banner1 from "../../Images/Banner1.gif";
 import banner2 from "../../Images/banner2.jpg";
 import banner3 from "../../Images/banner3.jpg";
-import { Grid, GridItem, Img, Heading, Text } from "@chakra-ui/react";
+import {
+  Grid,
+  GridItem,
+  Box,
+  Button,
+  Img,
+  Heading,
+  Text,
+  Image,
+} from "@chakra-ui/react";
+import MakeupBanner from "../../Images/MakeupBanner.png";
 import TopOffers from "./TopOffers";
+import { useEffect } from "react";
+
 function Home() {
   return (
-    <div>
+    <Box>
       {/* Banner Slider */}
-      <Carousel fade className="slider">
+      <Carousel interval={2000} className="slider">
         <Carousel.Item className="carousal-item">
           <img src={banner1} alt="First slide" />
         </Carousel.Item>
@@ -22,11 +35,11 @@ function Home() {
       </Carousel>
 
       {/* Categories */}
-      <Heading mt={10} mb="5">
+      <Heading mt={10} mb="5" size={"lg"}>
         Shop By Categories
       </Heading>
       <Grid
-        w={"95%"}
+        w={"85%"}
         m="auto"
         templateColumns={{
           lg: "repeat(6, 1fr)",
@@ -63,7 +76,92 @@ function Home() {
 
       {/* Top Offers slider */}
       <TopOffers />
-    </div>
+
+      {/* Image Banner */}
+      <Box>
+        <Image
+          w="100%"
+          mt={10}
+          mb={8}
+          src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.21a/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwe9e61b1e/images/Spring2023/xcat_easterhpgiftingzone_sp2_hb.jpg?yocs=s_"
+        />
+        <Grid
+          w={"90%"}
+          margin="auto"
+          mb={10}
+          templateColumns={{
+            lg: "repeat(6, 1fr)",
+            md: "repeat(3, 1fr)",
+            sm: "repeat(2,1fr)",
+          }}
+        >
+          <Button
+            w="90%"
+            bg={"blackAlpha.800"}
+            _hover={{ color: "black", bg: "blackAlpha.100" }}
+            color="white"
+            mb={5}
+            size="md"
+          >
+            TOP GIFTS PICKS
+          </Button>
+          <Button
+            w="90%"
+            bg={"blackAlpha.800"}
+            _hover={{ color: "black", bg: "blackAlpha.100" }}
+            color="white"
+            mb={5}
+            size="md"
+          >
+            GIFT GETS
+          </Button>
+          <Button
+            w="90%"
+            bg={"blackAlpha.800"}
+            _hover={{ color: "black", bg: "blackAlpha.100" }}
+            color="white"
+            mb={5}
+            size="md"
+          >
+            GIFTS UNDER $15
+          </Button>
+          <Button
+            w="90%"
+            mb={5}
+            bg={"blackAlpha.800"}
+            _hover={{ color: "black", bg: "blackAlpha.100" }}
+            color="white"
+            size="md"
+          >
+            GIFTS UNDER $30
+          </Button>
+          <Button
+            w="90%"
+            mb={5}
+            bg={"blackAlpha.800"}
+            _hover={{ color: "black", bg: "blackAlpha.100" }}
+            color="white"
+            size="md"
+          >
+            HOME DECORE
+          </Button>
+          <Button
+            w="90%"
+            mb={5}
+            bg={"blackAlpha.800"}
+            _hover={{ color: "black", bg: "blackAlpha.100" }}
+            color="white"
+            size="md"
+          >
+            ACCESSORIES
+          </Button>
+        </Grid>
+      </Box>
+      <Heading mt={15} mb={5} size="lg">
+        LATEST IN BEAUTY & GROOMING
+      </Heading>
+      <Img w={"100%"} src={MakeupBanner} />
+    </Box>
   );
 }
 

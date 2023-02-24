@@ -1,0 +1,8 @@
+.list-items>p{
+    padding: 10px;
+    cursor: pointer;
+}
+.list-items>p:hover{
+    
+    text-decoration: underline;
+}
