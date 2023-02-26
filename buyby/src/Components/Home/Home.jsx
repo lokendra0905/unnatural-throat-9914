@@ -1,6 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
-import styles from "./Home.css";
-import axios from "axios";
+import "./Home.css";
 import banner1 from "../../Images/Banner1.gif";
 import banner2 from "../../Images/banner2.jpg";
 import banner3 from "../../Images/banner3.jpg";
@@ -16,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import MakeupBanner from "../../Images/MakeupBanner.png";
 import TopOffers from "./TopOffers";
-import { useEffect } from "react";
 
 function Home() {
   return (
